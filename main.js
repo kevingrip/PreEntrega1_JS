@@ -1,11 +1,17 @@
 let montoTotal = 0;
 let presupuestoMaximo = prompt(`Ingrese el presupuesto que dispone la empresa en el 2023: `);
 
-for (let i=1; i <= 12; i++){
+for (let i=1; i <= 2; i++){
     mes=i;
     gastoMensual = prompt(`Ingrese el monto gastado en el mes ${mes} del 2023: `);
-    gastoMensual = parseInt(gastoMensual);
-    montoTotal += gastoMensual;
+    if (gastoMensual == ""){
+        gastoMensual = parseInt(0);
+        montoTotal += gastoMensual;
+    }
+    else{
+        gastoMensual = parseInt(gastoMensual);
+        montoTotal += gastoMensual;
+    }
 }
 
 alert(`El presupuesto otorgado durante el 2023 fue $ ${presupuestoMaximo}`);
